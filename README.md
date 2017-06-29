@@ -1,5 +1,7 @@
 Implements some `Hash` methods which ruby will undoubtedly add in the future, possibly with different names.
 
+To install run `gem install hash-polyfill`, and then `require "hash-polyfill"` in your code.
+
 ## Usage
 
 ```ruby
