@@ -3,10 +3,10 @@ Implements some `Hash` methods which ruby will undoubtedly add in the future, po
 ## Usage
 
 ```ruby
-a = {a: 1, b: 2, c: 3, d: 4}
+a = {a: 1, b: 2, c: 3, d: 4}
 
-a.select_values(&even?) # => {b: 2, d: 4}
-a.reject_values(&even?) # => {a: 1, c: 3}
+a.select_values(&:even?) # => {b: 2, d: 4}
+a.reject_values(&:even?) # => {a: 1, c: 3}
 a.transform_values{|v| v * 10} # => {a: 10, b: 20, c: 30, d: 40}
 
 b = {a: 1, b: 2, c: nil, d: false}

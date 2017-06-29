@@ -1,6 +1,6 @@
 require "pathname"
 Gem::Specification.new do |s|
-  s.name         = "hash-zip"
+  s.name         = "hash-polyfill"
   s.version      = "0.1.20170629"
   s.date         = "2017-06-29"
   s.summary      = "Polyfill for Hash methods ruby will get in the future"
