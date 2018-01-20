@@ -113,4 +113,12 @@ describe "Hash polyfill" do
     expect(a.transform_values!.each(&:itself)).to eq(a)
     expect(a).to eq({a: 3, b: 4, c: 5, d: 6})
   end
+
+  # Ruby 2.5 polyfill
+  it "slice" do
+    a = {a: 2, b: 3, c: 4, d: 5}
+    b = a.slice(:a, :b, :e)
+    expect(a).to eq({a: 2, b: 3, c: 4, d: 5})
+    expect(b).to eq({a: 2, b: 3})
+  end
 end

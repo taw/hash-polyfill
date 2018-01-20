@@ -55,4 +55,12 @@ class Hash
     end
     self
   end unless method_defined? :transform_values!
+
+  def slice(*values)
+    result = {}
+    values.each do |key|
+      result[key] = self[key] if has_key?(key)
+    end
+    result
+  end unless method_defined? :slice
 end
