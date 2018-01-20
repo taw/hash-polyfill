@@ -19,6 +19,8 @@ b.compact # => {a: 1, b: 2, d: false}
 The gem only adds the methods if they don't already exist.
 
 * In ruby 2.4+, `Hash#transform_values` is already provided.
+* In ruby 2.4+, `Hash#transform_values!` is already provided.
+* In ruby 2.5+, `Hash#transform_keys` is already provided.
 * In ruby 2.5+, `Hash#slice` is already provided.
 
-There are also `!` versions of all these methods.
+There are also `!` versions of some of these methods.

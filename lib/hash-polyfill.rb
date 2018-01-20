@@ -63,4 +63,13 @@ class Hash
     end
     result
   end unless method_defined? :slice
+
+  def transform_keys
+    return enum_for(:transform_keys) unless block_given?
+    result = {}
+    each do |key, value|
+      result[yield(key)] = value
+    end
+    result
+  end unless method_defined? :transform_keys
 end

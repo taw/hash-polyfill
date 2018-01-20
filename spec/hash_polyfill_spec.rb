@@ -121,4 +121,20 @@ describe "Hash polyfill" do
     expect(a).to eq({a: 2, b: 3, c: 4, d: 5})
     expect(b).to eq({a: 2, b: 3})
   end
+
+  # Ruby 2.5 polyfill
+  it "transform_keys - with block" do
+    a = {a: 2, b: 3, c: 4, d: 5}
+    b = a.transform_keys(&:next)
+    expect(a).to eq({a: 2, b: 3, c: 4, d: 5})
+    expect(b).to eq({b: 2, c: 3, d: 4, e: 5})
+  end
+
+  it "transform_keys - no block yields Enumerator" do
+    a = {a: 2, b: 3, c: 4, d: 5}
+    expect(a.transform_keys).to be_instance_of(Enumerator)
+    b = a.transform_keys.each(&:next)
+    expect(a).to eq({a: 2, b: 3, c: 4, d: 5})
+    expect(b).to eq({b: 2, c: 3, d: 4, e: 5})
+  end
 end
