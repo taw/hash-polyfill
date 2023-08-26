@@ -12,5 +12,6 @@ blocks:
           commands:
             - checkout
             - 'sem-version ruby 2.3.8 # this one needs all polyfills, in 2.4+ some are already implemented'
+            - 'gem install bundler -v 1.17.3 # needed for old ruby'
             - bundle install --path vendor/bundle
             - bundle exec rspec
